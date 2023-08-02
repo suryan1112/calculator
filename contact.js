@@ -1,0 +1,220 @@
+
+var precision=".000"
+var on=true;
+var screen=document.querySelector("#text>div .upper");
+var screen2=document.querySelector("#text>div .lower");
+var saver=screen2.textContent.trim();
+var saver2="";
+var shift=false;
+var alpha=false;
+
+document.getElementById('7').addEventListener('click', function() {
+    if(on) screen.innerText+="7";
+});
+document.getElementById('8').addEventListener('click', function() {
+    if(on) screen.textContent+="8";
+});
+document.getElementById('9').addEventListener('click', function() {
+   if(on) screen.textContent+="9";
+});
+document.getElementById('del').addEventListener('click', function() {
+    if(on){var str=screen.innerText;
+    screen.innerHTML=str.replace(str[str.length-1],"");}
+});
+document.getElementById('ac').addEventListener('click', function() {
+    if(on){
+       if(shift){
+            on=false;
+            saver2=screen2.textContent;
+            setTimeout(screen2.innerHTML="CASIO-10",1000)
+            screen.textContent="";
+            screen2.textContent="";
+            document.querySelector("#screen #shift").style.opacity=0;
+            document.querySelector("#screen #alpha").style.opacity=0;
+            shiftdone();
+            return;
+       } 
+        screen.textContent="";
+    saver2=screen2.textContent;
+    screen2.textContent="0.";}
+});
+document.getElementById('4').addEventListener('click', function() {
+    if(on)screen.textContent+="4"
+});
+document.getElementById('5').addEventListener('click', function() {
+    if(on)screen.textContent+="5"
+});
+document.getElementById('6').addEventListener('click', function() {
+    if(on)screen.textContent+="6"
+});
+document.getElementById('*').addEventListener('click', function() {
+    if(on)screen.textContent+="*"
+});
+document.getElementById('/').addEventListener('click', function() {
+    if(on)screen.textContent+="/"
+});
+document.getElementById('1').addEventListener('click', function() {
+    if(on)screen.textContent+="1"
+});
+document.getElementById('2').addEventListener('click', function() {
+    if(on)screen.textContent+="2"
+});
+document.getElementById('3').addEventListener('click', function() {
+    if(on)screen.textContent+="3"
+});
+document.getElementById('+').addEventListener('click', function() {
+    if(on)screen.textContent+="+"
+});
+document.getElementById('-').addEventListener('click', function() {
+    if(on)screen.textContent+="-"
+});
+document.getElementById('0').addEventListener('click', function() {
+    if(on)screen.textContent+="0"
+});
+document.getElementById('.').addEventListener('click', function() {
+    if(on)screen.textContent+="."
+});
+document.getElementById('10x').addEventListener('click', function() {
+    if(on){
+        if(shift){
+            screen.textContent+="3.14"; shiftdone(); return;
+        }
+        screen.textContent+="*10**"
+    }
+});
+function math(element){ 
+    var string=screen.innerText;
+    if(string.length){
+        if(string[string.length-1]-'0'<10 || string[string.length-1]==")") screen.textContent+="*"+element;
+        else screen.textContent+=element;}
+    else screen.textContent+=element;
+}
+function shiftdone(){
+    shift=false;
+    document.querySelector("#screen #shift").style.opacity=.3;
+}
+
+document.getElementById('ans').addEventListener('click', function() {
+    if(on){ if(screen2.textContent=="0.")
+        screen.textContent+=saver2;
+    else screen.textContent+=screen2.textContent;}
+});
+document.getElementById('=').addEventListener('click', function() {
+    if(on){
+     screen2.innerHTML=eval(screen.innerHTML);
+    //  screen.innerText=""
+     var result=true;}
+});
+document.querySelector(".complex>div>div:nth-child(2)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("Math.cbrt(");shiftdone();return; }
+         math("Math.sqrt(")
+    }
+})
+document.querySelector(".complex>div>div:nth-child(3)").addEventListener('click',function(){
+    if(on && screen.textContent.length){
+        if(shift) { screen.textContent+="**3"; shiftdone(); return;}
+        if(screen.textContent.length) screen.textContent+="**2";
+    }
+})
+document.querySelector(".complex>div>div:nth-child(4)").addEventListener('click',function(){
+    if(on && screen.textContent.length){
+        if(shift){
+            screen.textContent+="**(1/";
+            shiftdone();
+            return;
+        }else screen.textContent+="**";
+    }
+})
+document.querySelector(".complex>div>div:nth-child(5)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("10**");shiftdone();return; }
+        math("Math.log10(")
+    }
+})
+document.querySelector(".complex>div>div:nth-child(6)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("2.72**");shiftdone();return; }
+        math("Math.log(")
+        // this.style.border=;
+    }
+})
+document.querySelector(".complex>div>div:nth-child(7)").addEventListener('click',function(){
+    if(on){
+    var str=screen.innerText;
+    if(str[0]!="-") screen.innerHTML="-"+screen.innerHTML;
+    else {screen.innerText=screen.innerText.substring(1);}}
+})
+document.querySelector(".complex>div>div:nth-child(10)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("Math.asin(");shiftdone();return; }
+        math("Math.sin(")
+    }
+})
+document.querySelector(".complex>div>div:nth-child(11)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("Math.acos(");shiftdone();return; }
+        math("Math.cos(")
+    }
+})
+document.querySelector(".complex>div>div:nth-child(12)").addEventListener('click',function(){
+    if(on){
+        if(shift){math("Math.atan(");shiftdone();return; }
+        math("Math.tan(")
+    }
+})
+document.querySelector(".complex>div>div:nth-child(15)").addEventListener('click',function(){
+    if(on)screen.textContent+="("
+})
+document.querySelector(".complex>div>div:nth-child(16)").addEventListener('click',function(){
+    if(on) screen.textContent+=")"
+})
+document.getElementById('onoff').addEventListener('click', function() {
+    if(on==false){
+        on=true;
+        document.querySelector("#screen #alpha").style.opacity=.3;
+        document.querySelector("#screen #shift").style.opacity=.3;
+        screen.textContent="";
+        screen2.textContent="0.";
+    }
+});
+document.querySelector(".complex>#shift").addEventListener('click', function() {
+    if(on){
+        shift=true;
+        document.querySelector("#screen #shift").style.opacity=1;
+    }    
+});
+document.querySelector(".complex>#alpha").addEventListener('click', function() {
+    if(on){
+        if(!alpha){
+            alpha=true;
+            document.querySelector("#screen #alpha").style.opacity=1;
+        }
+        else {
+            alpha=false;
+            document.querySelector("#screen #alpha").style.opacity=.3;
+        }
+    }    
+});
+document.querySelector(".complex>div>div:nth-child(17)").addEventListener('click',function(){
+    if(on){
+        if(shift){screen.textContent+=";"; shiftdone(); return;}
+        screen.textContent+=","
+    }
+})
+document.querySelector(".complex>div>div:nth-child(8)").addEventListener('click',function(){
+    if(on){
+        if(shift){screen.textContent+="<"; shiftdone(); return;}  
+    }
+})
+document.querySelector(".complex>div>div:nth-child(14)").addEventListener('click',function(){
+    if(on){
+        if(shift){screen.textContent+=">"; shiftdone(); return;}
+    }
+})
+
+
+
+
+
+
