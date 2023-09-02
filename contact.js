@@ -7,19 +7,38 @@ var saver=screen2.textContent.trim();
 var saver2="";
 var shift=false;
 var alpha=false;
+var mute=false;
+
+document.getElementById("number_button").volume=.2;
 
 document.getElementById('7').addEventListener('click', function() {
     if(on) screen.innerText+="7";
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('8').addEventListener('click', function() {
     if(on) screen.textContent+="8";
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('9').addEventListener('click', function() {
    if(on) screen.textContent+="9";
+
+   if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('del').addEventListener('click', function() {
     if(on){var str=screen.innerText;
     screen.innerHTML=str.replace(str[str.length-1],"");}
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('ac').addEventListener('click', function() {
     if(on){
@@ -37,42 +56,94 @@ document.getElementById('ac').addEventListener('click', function() {
         screen.textContent="";
     saver2=screen2.textContent;
     screen2.textContent="0.";}
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('4').addEventListener('click', function() {
     if(on)screen.textContent+="4"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('5').addEventListener('click', function() {
     if(on)screen.textContent+="5"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('6').addEventListener('click', function() {
     if(on)screen.textContent+="6"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('*').addEventListener('click', function() {
     if(on)screen.textContent+="*"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('/').addEventListener('click', function() {
     if(on)screen.textContent+="/"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('1').addEventListener('click', function() {
     if(on)screen.textContent+="1"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('2').addEventListener('click', function() {
-    if(on)screen.textContent+="2"
+    if(on) screen.textContent+="2"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('3').addEventListener('click', function() {
     if(on)screen.textContent+="3"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('+').addEventListener('click', function() {
     if(on)screen.textContent+="+"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('-').addEventListener('click', function() {
     if(on)screen.textContent+="-"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('0').addEventListener('click', function() {
     if(on)screen.textContent+="0"
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('.').addEventListener('click', function() {
     if(on)screen.textContent+="."
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('10x').addEventListener('click', function() {
     if(on){
@@ -81,6 +152,9 @@ document.getElementById('10x').addEventListener('click', function() {
         }
         screen.textContent+="*10**"
     }
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 function math(element){ 
     var string=screen.innerText;
@@ -98,8 +172,16 @@ document.getElementById('ans').addEventListener('click', function() {
     if(on){ if(screen2.textContent=="0.")
         screen.textContent+=saver2;
     else screen.textContent+=screen2.textContent;}
+
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.getElementById('=').addEventListener('click', function() {
+    if(!mute) document.getElementById("number_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
+
     if(on){
      screen2.innerHTML=eval(screen.innerHTML);
     //  screen.innerText=""
@@ -110,12 +192,18 @@ document.querySelector(".complex>div>div:nth-child(2)").addEventListener('click'
         if(shift){math("Math.cbrt(");shiftdone();return; }
          math("Math.sqrt(")
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(3)").addEventListener('click',function(){
     if(on && screen.textContent.length){
         if(shift) { screen.textContent+="**3"; shiftdone(); return;}
         if(screen.textContent.length) screen.textContent+="**2";
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(4)").addEventListener('click',function(){
     if(on && screen.textContent.length){
@@ -125,12 +213,18 @@ document.querySelector(".complex>div>div:nth-child(4)").addEventListener('click'
             return;
         }else screen.textContent+="**";
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(5)").addEventListener('click',function(){
     if(on){
         if(shift){math("10**");shiftdone();return; }
         math("Math.log10(")
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(6)").addEventListener('click',function(){
     if(on){
@@ -138,36 +232,59 @@ document.querySelector(".complex>div>div:nth-child(6)").addEventListener('click'
         math("Math.log(")
         // this.style.border=;
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(7)").addEventListener('click',function(){
     if(on){
     var str=screen.innerText;
     if(str[0]!="-") screen.innerHTML="-"+screen.innerHTML;
     else {screen.innerText=screen.innerText.substring(1);}}
+
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(10)").addEventListener('click',function(){
     if(on){
         if(shift){math("Math.asin(");shiftdone();return; }
         math("Math.sin(")
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(11)").addEventListener('click',function(){
     if(on){
         if(shift){math("Math.acos(");shiftdone();return; }
         math("Math.cos(")
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(12)").addEventListener('click',function(){
     if(on){
         if(shift){math("Math.atan(");shiftdone();return; }
         math("Math.tan(")
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(15)").addEventListener('click',function(){
     if(on)screen.textContent+="("
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(16)").addEventListener('click',function(){
     if(on) screen.textContent+=")"
+
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.getElementById('onoff').addEventListener('click', function() {
     if(on==false){
@@ -177,12 +294,18 @@ document.getElementById('onoff').addEventListener('click', function() {
         screen.textContent="";
         screen2.textContent="0.";
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 });
 document.querySelector(".complex>#shift").addEventListener('click', function() {
     if(on){
         shift=true;
         document.querySelector("#screen #shift").style.opacity=1;
-    }    
+    } 
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);   
 });
 document.querySelector(".complex>#alpha").addEventListener('click', function() {
     if(on){
@@ -194,25 +317,80 @@ document.querySelector(".complex>#alpha").addEventListener('click', function() {
             alpha=false;
             document.querySelector("#screen #alpha").style.opacity=.3;
         }
-    }    
+    }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);    
 });
 document.querySelector(".complex>div>div:nth-child(17)").addEventListener('click',function(){
     if(on){
         if(shift){screen.textContent+=";"; shiftdone(); return;}
         screen.textContent+=","
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(8)").addEventListener('click',function(){
     if(on){
         if(shift){screen.textContent+="<"; shiftdone(); return;}  
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(14)").addEventListener('click',function(){
     if(on){
         if(shift){screen.textContent+=">"; shiftdone(); return;}
     }
+    if(!mute) document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
+document.addEventListener("keydown",(event)=>{
+    if(on){
+    for(let i=0;i<10;i++)
+        if(event.key==i) screen.textContent+=i;
+    if(event.key=="*") screen.textContent+="*"
+    if(event.key=="/") screen.textContent+="/"
+    if(event.key=="-") screen.textContent+="-"
+    if(event.key==".") screen.textContent+="."
+    if(event.key==",") screen.textContent+=","
+    if(event.key=="+" || (event.shiftkey && event.key=="=")) screen.textContent+="+"
+    if(event.key=="%") screen.textContent+="%"
+    if(event.key=="(") screen.textContent+="("
+    if(event.key==")") screen.textContent+=")"
+    if(event.key=="^") screen.textContent+="**"
 
+    if(event.key=="Backspace"){
+        var str=screen.innerText;
+        screen.innerHTML=str.replace(str[str.length-1],"");
+    }
+    if(event.key=="Enter"){
+        screen2.innerHTML=eval(screen.innerHTML);
+        var result=true;}}
+    if(event.shiftKey && event.key=="Backspace"){
+        if(shift){
+             on=false;
+             saver2=screen2.textContent;
+             setTimeout(screen2.innerHTML="CASIO-10",1000)
+             screen.textContent="";
+             screen2.textContent="";
+             document.querySelector("#screen #shift").style.opacity=0;
+             document.querySelector("#screen #alpha").style.opacity=0;
+             shiftdone();
+             return;
+        } 
+         screen.textContent="";
+     saver2=screen2.textContent;
+     screen2.textContent="0.";}
+})
+document.getElementById("mode").addEventListener("click",()=>{
+    mute=!mute;
+    document.getElementById("small_button").play()
+    this.style.boxShadow="none"
+    setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
+})
 
 
 
