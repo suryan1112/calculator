@@ -37,7 +37,7 @@
     box-sizing: border-box;
     border-radius: 5px;
     font-weight: 500;
-    font-family: 'Calculator', sans-serif;
+    font-family: 'Tektur', cursive;
     box-shadow:2px 2px 5px 2px black inset;
 
  }
@@ -75,14 +75,14 @@
     flex-wrap: wrap;
 }
 .complexKey{
-    width:45px; height: 25px;
-    margin:11px 1px;
+    width:45px; height: 26.8px;
+    margin:9.9px 1px;
     border-radius: 5px;
     box-shadow:1px 2px 2px .1px;
 
 }
 .keys{
-    width:55px; height: 39px;
+    width:55px; height: 39.3px;
     /* margin:0 3px; */
     margin-bottom: 17px;
     border-radius: 10px;
@@ -90,33 +90,33 @@
 }
 .complex>#shift{
     position:absolute;
-    left:35px; top:20px;
-    height: 35px; width: 35px;
+    left:36px; top:20.8px;
+    height: 31.8px; width: 34px;
     border-radius: 50%;
     box-shadow:2px 2px 4px .5px;
 
 }
 .complex>#alpha{
     position:absolute;
-    height: 35px; width: 35px;
+    height: 31.8px; width: 34px;
     border-radius: 50%;
-    left:85px; top:20px;
+    left:86.5px; top:20.8px;
     box-shadow:2px 2px 4px .5px;
 
 }
 .complex>#onoff{
     position:absolute;
-    right:35px; top:20px;
-    height: 35px; width: 35px;
+    right:35.6px; top:20.8px;
+    height: 31.8px; width: 34px;
     border-radius: 50%;
     box-shadow:2px 2px 4px .5px;
 
 }
 .complex>#mode{
     position:absolute;
-    height: 35px; width: 35px;
+    height: 31.8px; width: 34px;
     border-radius: 50%;
-    right:85px; top:20px;
+    right:86px; top:20.8px;
     box-shadow:2px 2px 4px .5px;
 
 }
@@ -176,5 +176,4 @@
     opacity: 0.5;
     padding-top:-2px
 }
-
 
