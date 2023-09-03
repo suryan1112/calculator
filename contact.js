@@ -325,8 +325,10 @@ document.querySelector(".complex>div>div:nth-child(12)").addEventListener('click
     setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
 })
 document.querySelector(".complex>div>div:nth-child(15)").addEventListener('click',function(){
-    if(on)scaudio2.pause();
-    audio2.currentTime=0;reen.textContent+="("
+    if(on) screen.textContent+="("
+    
+    audio2.pause();
+    audio2.currentTime=0;
     if(!mute) audio2.play()
     this.style.boxShadow="none"
     setTimeout(()=>{this.style.boxShadow="2px 2px 4px .5px";},200);
